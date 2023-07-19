@@ -18,17 +18,6 @@ class Park
     @vehicles << vehicle
   end
 
-  # def list_passengers
-  #   passengers = []
-  #   @vehicles.each do |vehicle|
-  #     vehicle.passengers.each do |passenger|
-  #       passengers << passenger
-  #     end
-  #   end
-  #   passengers.flatten!
-  #   passengers
-  # end
-
   def list_passengers
     @vehicles.each do |vehicle|
       vehicle.passengers.each do |passenger|
