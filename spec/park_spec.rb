@@ -22,11 +22,13 @@ RSpec.describe Passenger do
     end
   end
 
-  describe "administer_vehicle" do 
-    expect(@park.vehicles).to ([])
+  describe "administer_vehicle" do
+    it "can administer vehicles" do 
+      expect(@park.vehicles).to eq([])
 
-    @park.administer_vehicle(@vehicle)
+      @park.administer_vehicle(@vehicle)
 
-    expect(@park.vehicles).to eq([@vehicle])
+      expect(@park.vehicles).to eq([@vehicle])
+    end
   end
 end 
