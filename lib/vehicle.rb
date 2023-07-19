@@ -1,5 +1,5 @@
 class Vehicle
-  attr_reader :name, 
+  attr_reader :year, 
               :make,
               :model
   
