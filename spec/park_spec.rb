@@ -21,4 +21,12 @@ RSpec.describe Passenger do
       expect(@park.admission_price).to eq(5)
     end
   end
+
+  describe "administer_vehicle" do 
+    expect(@park.vehicles).to ([])
+
+    @park.administer_vehicle(@vehicle)
+
+    expect(@park.vehicles).to eq([@vehicle])
+  end
 end 
