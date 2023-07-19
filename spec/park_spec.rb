@@ -11,7 +11,7 @@ RSpec.describe Passenger do
     @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
     @jude = Passenger.new({"name" => "Jude", "age" => 20})
     @steve = Passenger.new({"name" => "Steve", "age" => 19})
-    @reagan= Passenger.new({"name" => "Jude", "age" => 14})
+    @reagan= Passenger.new({"name" => "Reagan", "age" => 14})
     
     
   end
@@ -50,7 +50,9 @@ RSpec.describe Passenger do
       @park.administer_vehicle(@vehicle_1)
       @park.administer_vehicle(@vehicle_2)
       # require 'pry';binding.pry
-      expect(@park.list_passengers).to eq([@charlie, @taylor, @jude, @steve, @reagan])
+      @park.list_passengers
+      
+      expect(@park.passengers).to eq([@charlie, @taylor, @jude, @steve, @reagan])
     end
   end
 
@@ -66,11 +68,13 @@ RSpec.describe Passenger do
       @park.administer_vehicle(@vehicle_1)
       @park.administer_vehicle(@vehicle_2)
       # require 'pry';binding.pry
-      expect(@park.calculate_revenue).to eq(15)
+      @park.calculate_revenue
+
+      expect(@park.revenue).to eq(15)
     end
   end
 
-  xdescribe "#all attendees" do 
+  describe "#all attendees" do 
     it "returns a list of all attendees names sorted alphabetically" do 
       @vehicle_1.add_passenger(@charlie)
       @vehicle_1.add_passenger(@taylor)
@@ -81,8 +85,12 @@ RSpec.describe Passenger do
 
       @park.administer_vehicle(@vehicle_1)
       @park.administer_vehicle(@vehicle_2)
-
+      # require 'pry';binding.pry
       expect(@park.all_attendees).to eq(["Charlie", "Jude", "Reagan", "Steve", "Taylor"])
     end
+  end
+
+  xdescribe "#minors" do 
+    it "can"
   end
 end 
