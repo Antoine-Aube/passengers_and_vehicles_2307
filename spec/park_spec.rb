@@ -31,4 +31,18 @@ RSpec.describe Passenger do
       expect(@park.vehicles).to eq([@vehicle])
     end
   end
+
+  describe "list_passengers" do 
+    it "can list all passengers from administers vehicles" do 
+      expect(@park.visitors).to eq([])
+
+      @vehicle.add_passenger(@charlie)
+      @vehicle.add_passenger(@taylor)
+      @vehicle.add_passenger(@jude)
+
+      @park.administer_vehicle(@vehicle)
+
+      expect(@park.visitors).to eq([@charlie, @taylor, @jude])
+    end
+  end
 end 

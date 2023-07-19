@@ -35,11 +35,11 @@ RSpec.describe Passenger do
     it "can add passengers to passengers array" do 
       expect(@vehicle.passengers).to eq([])
 
-    @vehicle.add_passenger(@charlie)
-    @vehicle.add_passenger(@taylor)
-    @vehicle.add_passenger(@jude)
+      @vehicle.add_passenger(@charlie)
+      @vehicle.add_passenger(@taylor)
+      @vehicle.add_passenger(@jude)
 
-    expect(@vehicle.passengers).to eq([@charlie, @taylor, @jude])
+      expect(@vehicle.passengers).to eq([@charlie, @taylor, @jude])
     end
   end
 
