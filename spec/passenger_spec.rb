@@ -17,4 +17,11 @@ RSpec.describe Passenger do
       expect(@charlie.age).to eq(18)
     end
   end 
+
+  describe "#adult?" do 
+    it "is an adult if 18 or older in age" do
+      expect(@charlie.adult?).to be true
+      expect(@taylor.adult?).to be false
+    end
+  end
 end
