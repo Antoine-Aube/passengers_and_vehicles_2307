@@ -27,7 +27,7 @@ RSpec.describe Passenger do
 
       @vehicle.speed
 
-      expect(@vehicle.speeding).to be true
+      expect(@vehicle.speeding?).to be true
     end
   end
 

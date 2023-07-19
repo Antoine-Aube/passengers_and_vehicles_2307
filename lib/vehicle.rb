@@ -2,8 +2,9 @@ class Vehicle
   attr_reader :year, 
               :make,
               :model,
-              :speeding,
               :passengers
+              #don't need @speeding in the attr_reader as the 
+              #below method speeding? calls on it already 
   
   def initialize(year, make, model)
     @year = year
@@ -26,12 +27,7 @@ class Vehicle
   end
 
   def num_adults
-    adult_counter = 0
-    @passengers.each do |passenger|
-      if passenger.adult? == true
-        adult_counter += 1
-      end
-    end
-    adult_counter
+    #use count enumerable, return an integer instead of setting up a counter
+    @passengers.count {|passenger| passenger.adult? == true }
   end
 end
