@@ -12,5 +12,11 @@ RSpec.describe Passenger do
     it "can exist" do 
       expect(@vehicle).to be_a Vehicle
     end
+
+    it "has a year, make and model" do 
+      expect(@vehicle.year).to eq("2001")
+      expect(@vehicle.make).to eq("Honda")
+      expect(@vehicle.model).to eq("Civic")
+    end
   end 
 end
