@@ -5,7 +5,8 @@ RSpec.describe Passenger do
   before(:each) do 
     @vehicle = Vehicle.new("2001", "Honda", "Civic")  
     @charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
-    @taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+    @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+    @jude = Passenger.new({"name" => "Jude", "age" => 20}) 
     
   end
   describe "#initialize" do
@@ -26,7 +27,19 @@ RSpec.describe Passenger do
 
       @vehicle.speed
 
-      expect(@vehicle.speeding).to be True
+      expect(@vehicle.speeding).to be true
+    end
+  end
+
+  describe "#add_passenger" do 
+    it "can add passengers to passengers array" do 
+      expect(@vehicle.passengers).to eq([])
+
+    @vehicle.add_passenger(@charlie)
+    @vehicle.add_passenger(@taylor)
+    @vehicle.add_passenger(@jude)
+
+    expect(@vehicle.passengers).to eq([@charlie, @taylor, @jude])
     end
   end
 end
