@@ -1,5 +1,6 @@
 require './lib/vehicle'
 require './lib/passenger'
+require './lib/Park'
 
 RSpec.describe Passenger do 
   before(:each) do 
@@ -13,6 +14,11 @@ RSpec.describe Passenger do
   describe "#initialize" do
     it "can exist" do 
       expect(@park).to be_a Park
+    end
+
+    it "has a name and admission price" do 
+      expect(@park.name).to eq("Liberty Park")
+      expect(@park.admission_price).to eq(5)
     end
   end
 end 
