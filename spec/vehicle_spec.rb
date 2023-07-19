@@ -8,7 +8,8 @@ RSpec.describe Passenger do
   end
   describe "#initialize" do
     it "can exist" do 
-      expect(charlie).to be_a Passenger
+      expect(@charlie).to be_a Passenger
+      expect(@taylor),to be_a Passenger
     end
   end 
 end
