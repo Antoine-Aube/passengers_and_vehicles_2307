@@ -24,4 +24,14 @@ RSpec.describe Passenger do
       expect(@taylor.adult?).to be false
     end
   end
+
+  describe "#driver?" do 
+    it "returns true if assigned as driver" do 
+      expect(@charlier.driver?).to be false
+
+      @charlie.drive
+
+      expect(@charlie.driver?).to be true 
+    end
+  end
 end
