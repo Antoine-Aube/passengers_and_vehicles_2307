@@ -14,21 +14,21 @@ class Park
     @vehicles << vehicle
   end
 
-  def list_visitors
-    visitors = []
+  def list_passengers
+    passengers = []
     @vehicles.each do |vehicle|
       vehicle.passengers.each do |passenger|
-        visitors << passenger
+        passengers << passenger
       end
     end
-    visitors.flatten!
-    visitors
+    passengers.flatten!
+    passengers
   end
 
   def calculate_revenue
-    visitors = list_visitors 
-    adult_visitors = visitors.find_all { |visitor| visitor.adult? }
-    revenue = adult_visitors.length * @admission_price
+    passengers = list_passengers 
+    adult_passengers = passengers.find_all { |passenger| passenger.adult? }
+    revenue = adult_passengers.length * @admission_price
     revenue
   end
 end

@@ -50,7 +50,7 @@ RSpec.describe Passenger do
       @park.administer_vehicle(@vehicle_1)
       @park.administer_vehicle(@vehicle_2)
       # require 'pry';binding.pry
-      expect(@park.list_visitors).to eq([@charlie, @taylor, @jude, @steve, @reagan])
+      expect(@park.list_passengers).to eq([@charlie, @taylor, @jude, @steve, @reagan])
     end
   end
 
@@ -65,8 +65,24 @@ RSpec.describe Passenger do
 
       @park.administer_vehicle(@vehicle_1)
       @park.administer_vehicle(@vehicle_2)
-
+      # require 'pry';binding.pry
       expect(@park.calculate_revenue).to eq(15)
+    end
+  end
+
+  xdescribe "#all attendees" do 
+    it "returns a list of all attendees names sorted alphabetically" do 
+      @vehicle_1.add_passenger(@charlie)
+      @vehicle_1.add_passenger(@taylor)
+      @vehicle_1.add_passenger(@jude)
+
+      @vehicle_2.add_passenger(@steve)
+      @vehicle_2.add_passenger(@reagan)
+
+      @park.administer_vehicle(@vehicle_1)
+      @park.administer_vehicle(@vehicle_2)
+
+      expect(@park.all_visitors_alphabetically).to eq(["Charlie", "Jude", "Reagan", "Steve", "Taylor"])
     end
   end
 end 
