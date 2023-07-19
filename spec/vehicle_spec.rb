@@ -42,4 +42,14 @@ RSpec.describe Passenger do
     expect(@vehicle.passengers).to eq([@charlie, @taylor, @jude])
     end
   end
+
+  describe "#num_adults" do 
+    it "can return number of adults that are in the vehicle as an integer" do 
+      @vehicle.add_passenger(@charlie)
+      @vehicle.add_passenger(@taylor)
+      @vehicle.add_passenger(@jude)
+
+      expect(@vehicle.num_adults).to eq(2)
+    end
+  end
 end
