@@ -38,8 +38,8 @@ RSpec.describe Passenger do
     end
   end
 
-  describe "list_passengers" do 
-    it "can list all passengers from administers vehicles" do 
+  describe "list_visitors" do 
+    it "can list all visitors from administered vehicles" do 
       @vehicle_1.add_passenger(@charlie)
       @vehicle_1.add_passenger(@taylor)
       @vehicle_1.add_passenger(@jude)
@@ -51,6 +51,22 @@ RSpec.describe Passenger do
       @park.administer_vehicle(@vehicle_2)
       # require 'pry';binding.pry
       expect(@park.list_visitors).to eq([@charlie, @taylor, @jude, @steve, @reagan])
+    end
+  end
+
+  describe "calculate revenue" do 
+    it "can calculate revenue based on number of adults administered" do
+      @vehicle_1.add_passenger(@charlie)
+      @vehicle_1.add_passenger(@taylor)
+      @vehicle_1.add_passenger(@jude)
+
+      @vehicle_2.add_passenger(@steve)
+      @vehicle_2.add_passenger(@reagan)
+
+      @park.administer_vehicle(@vehicle_1)
+      @park.administer_vehicle(@vehicle_2)
+
+      expect(@park.calculate_revenue).to eq(15)
     end
   end
 end 
