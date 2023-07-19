@@ -82,7 +82,7 @@ RSpec.describe Passenger do
       @park.administer_vehicle(@vehicle_1)
       @park.administer_vehicle(@vehicle_2)
 
-      expect(@park.all_visitors_alphabetically).to eq(["Charlie", "Jude", "Reagan", "Steve", "Taylor"])
+      expect(@park.all_attendees).to eq(["Charlie", "Jude", "Reagan", "Steve", "Taylor"])
     end
   end
 end 
