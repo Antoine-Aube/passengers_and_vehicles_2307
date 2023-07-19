@@ -19,4 +19,14 @@ RSpec.describe Passenger do
       expect(@vehicle.model).to eq("Civic")
     end
   end 
+
+  describe "#speeding?" do 
+    it "is not speeding unless speed method called" do 
+      expect(@vehicle.speeding?).to be false
+
+      @vehicle.speed
+
+      expect(@vehicle.speeding).to be True
+    end
+  end
 end
