@@ -27,7 +27,7 @@ RSpec.describe Passenger do
 
   describe "#driver?" do 
     it "returns true if assigned as driver" do 
-      expect(@charlier.driver?).to be false
+      expect(@charlie.driver?).to be false
 
       @charlie.drive
 
